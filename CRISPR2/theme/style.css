@@ -1,0 +1,44 @@
+﻿body {
+}
+.jumbotron {
+    background-image: url("img/background.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #e3f2fd;
+    color: black;
+    text-align: center;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    width: 36px;
+    height: 40px;
+    padding: 2px;
+    background: #fff;
+    border: 2px solid aqua;
+    color: aqua;
+    text-align: center;
+    font: 20px Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+body{
+
+    background-image:url("img/bg1.png");
+}
+
+div{
+    border:1px;
+    border-color:blue;
+
+}
+
+
+
+

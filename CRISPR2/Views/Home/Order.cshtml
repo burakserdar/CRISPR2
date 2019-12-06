@@ -1,0 +1,173 @@
+﻿@using CRISPR2.Models;
+@{
+    ViewBag.Title = "Order";
+}
+
+@model ModelOrder
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#e3f2fd">
+    <div class="container">
+        <a class="navbar-brand" href="#">Polgen</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<form class="was-validated">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="numberCircle col-md-1">1.adım</div>
+            <div class="col-md-4">
+                <div class="btn-group">
+                    <div class="form-group">
+                        <select class="custom-select" required>
+                            <option value="">Organizma</option>
+
+                            @foreach (var organisma in Model.OrganismList)
+                            {
+                                <option value="@organisma.Id">@organisma.OrganismName</option>
+
+
+
+                            }
+
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="ikinci col-md-4">
+
+                <textarea rows="1" class="form-control is-invalid mb-2" id="validationTextarea" placeholder="Organizma adını yazınız" required=""></textarea>
+
+                <button id="ok" type="button" class="rounded btn-primary" onclick="do_change1('implement');">Onayla</button>
+
+            </div>
+        </div>
+    </div> <!--"1.ADIM "-->
+
+
+    <div class="container mt-5">
+        <div class="row" style="visibility:hidden" id="implement">
+
+            <div class="numberCircle col-md-1">2.adım</div>
+            <div class="col-md-4">
+                <div class="btn-group">
+                    <div class="form-group">
+                        <select class="custom-select" required>
+                            <option value="">Uygulama Tipi</option>
+
+                            @foreach (var implement in Model.ImplementList)
+                            {
+                                <option value="@implement.Id ">@implement.ImplementName</option>
+
+
+                            }
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <textarea rows="1" class="form-control is-invalid mb-2" id="implementt" placeholder="Gen adını yazınız" required=""></textarea>
+
+                <button type="button" class="rounded btn-primary" onclick="do_change1('RNA');">Onayla</button>
+
+            </div>
+        </div>
+    </div>    <!--"2.ADIM "-->
+
+
+    <div class="container mt-5">
+        <div class="row" style="visibility:hidden" id="RNA">
+            <div class="numberCircle col-md-1">3.adım</div>
+            <div class="col-md-4">
+                <div class="btn-group">
+                    <div class="form-group">
+                        <select title="Dizayn sayısını belirtiniz." class="extra custom-select" required>
+                            <option title="Dizayn sayısını belirtiniz." value="">SgRNA Dizayn</option>
+
+                            @foreach (var sgrna in Model.SgrnaList)
+                            {
+                                <option title="Dizayn sayısını belirtiniz." value="@sgrna.Id ">@sgrna.SgrnaName</option>
+
+
+                            }
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div> <!--"3.ADIM "-->
+
+
+
+
+    <div class="container mt-5 mb-5">
+
+        <div class="row" style="visibility:hidden" id="off">
+            <div class="numberCircle col-md-1">4.adım</div>
+            <div class="col-md-4">
+                <div class="btn-group">
+                    <div class="form-group">
+                        <select class="custom-select" required>
+                            <option value="">Off Target</option>
+
+                            @foreach (var offtarget in Model.OfftargetList)
+                            {
+                                <option value="@offtarget.Id ">@offtarget.OfftargetName</option>
+
+
+                            }
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+
+                <textarea rows="1" class="form-control is-invalid mb-1" id="validationTextarea" placeholder="Boş bırakmayınız" required=""></textarea>
+                <button id="ok" type="button" class="rounded btn-primary">Siparişi Tamamla</button>
+            </div>
+        </div>
+    </div><!--"5.ADIM "-->
+
+</form>
+
+
+
+
+
+
+
+
+
+
+<footer class="footer mt-5 py-3">
+    <div class="container">
+        <span class="text-muted">Polgen Biyoteknoloji.®</span>
+    </div>
+</footer>
+
+
