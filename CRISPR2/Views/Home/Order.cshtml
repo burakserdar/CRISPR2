@@ -27,7 +27,7 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> 
 
 <form class="was-validated">
     <div class="container mt-5">
@@ -36,15 +36,12 @@
             <div class="col-md-4">
                 <div class="btn-group">
                     <div class="form-group">
-                        <select class="custom-select" required>
-                            <option value="">Organizma</option>
+                        <select id="Sorganism" class="custom-select" required>
+                            <option  value="">Organizma</option>
 
                             @foreach (var organisma in Model.OrganismList)
                             {
                                 <option value="@organisma.Id">@organisma.OrganismName</option>
-
-
-
                             }
 
                         </select>
@@ -52,9 +49,14 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
             <div class="ikinci col-md-4">
 
-                <textarea rows="1" class="form-control is-invalid mb-2" id="validationTextarea" placeholder="Organizma adını yazınız" required=""></textarea>
+                <textarea rows="1" class="Torganism  form-control is-invalid mb-2" id="validationTextarea" placeholder="Organizma adını yazınız" required=""></textarea>
 
                 <button id="ok" type="button" class="rounded btn-primary" onclick="do_change1('implement');">Onayla</button>
 
@@ -70,14 +72,12 @@
             <div class="col-md-4">
                 <div class="btn-group">
                     <div class="form-group">
-                        <select class="custom-select" required>
+                        <select id="Simplement" class="custom-select" required>
                             <option value="">Uygulama Tipi</option>
 
                             @foreach (var implement in Model.ImplementList)
                             {
                                 <option value="@implement.Id ">@implement.ImplementName</option>
-
-
                             }
                         </select>
 
@@ -86,7 +86,7 @@
             </div>
             <div class="col-md-4">
 
-                <textarea rows="1" class="form-control is-invalid mb-2" id="implementt" placeholder="Gen adını yazınız" required=""></textarea>
+                <textarea rows="1" class="Timplement form-control is-invalid mb-2" id="implementt" placeholder="Gen adını yazınız" required=""></textarea>
 
                 <button type="button" class="rounded btn-primary" onclick="do_change1('RNA');">Onayla</button>
 
@@ -101,14 +101,12 @@
             <div class="col-md-4">
                 <div class="btn-group">
                     <div class="form-group">
-                        <select title="Dizayn sayısını belirtiniz." class="extra custom-select" required>
+                        <select id="Srna" title="Dizayn sayısını belirtiniz." class="extra custom-select" required>
                             <option title="Dizayn sayısını belirtiniz." value="">SgRNA Dizayn</option>
 
                             @foreach (var sgrna in Model.SgrnaList)
                             {
                                 <option title="Dizayn sayısını belirtiniz." value="@sgrna.Id ">@sgrna.SgrnaName</option>
-
-
                             }
                         </select>
 
@@ -120,9 +118,6 @@
         </div>
     </div> <!--"3.ADIM "-->
 
-
-
-
     <div class="container mt-5 mb-5">
 
         <div class="row" style="visibility:hidden" id="off">
@@ -130,14 +125,12 @@
             <div class="col-md-4">
                 <div class="btn-group">
                     <div class="form-group">
-                        <select class="custom-select" required>
+                        <select id="Sofftarget" class="custom-select" required>
                             <option value="">Off Target</option>
 
                             @foreach (var offtarget in Model.OfftargetList)
                             {
                                 <option value="@offtarget.Id ">@offtarget.OfftargetName</option>
-
-
                             }
                         </select>
 
@@ -147,21 +140,15 @@
             <div class="col-md-4">
 
 
-                <textarea rows="1" class="form-control is-invalid mb-1" id="validationTextarea" placeholder="Boş bırakmayınız" required=""></textarea>
-                <button id="ok" type="button" class="rounded btn-primary">Siparişi Tamamla</button>
+                <textarea rows="1" class="Tofftarget form-control is-invalid mb-1" id="validationTextarea" placeholder="Boş bırakmayınız" required=""></textarea>
+                <button id="tamamla" type="button" class="rounded btn-primary">Siparişi Tamamla</button>
             </div>
         </div>
-    </div><!--"5.ADIM "-->
+    </div><!--"4.ADIM "-->
 
 </form>
 
-
-
-
-
-
-deneme 1-2-3
-
+<div id="lastorder"> </div>
 
 
 <footer class="footer mt-5 py-3">
